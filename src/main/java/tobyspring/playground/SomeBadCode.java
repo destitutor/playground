@@ -11,5 +11,7 @@ public class SomeBadCode {
         // It is better to use java.util.Date or java.time.LocalDate.
         Date date = new Date(2021, 8, 1);
         System.out.println(date);
+
+        // This is a bad code example.
     }
 }
