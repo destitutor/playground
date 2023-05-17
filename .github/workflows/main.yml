@@ -6,8 +6,6 @@ on:
     branches:
       - main
       - feat-reply
-env:
-  NODE_VERSION: 18.12.0
 
 jobs:
   code_analysis:
@@ -22,30 +20,31 @@ jobs:
         run: |
           git fetch --prune --unshallow
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
         with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Cache node modules
+          java-version: 11
+          
+      - name: Cache SonarQube packages
         uses: actions/cache@v3
-        id: npm-cache
         with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
 
-      - name: Install Dependencies
-        if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm install
+      - name: Cache Gradle packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
+          restore-keys: ${{ runner.os }}-gradle
 
-      - name: Coverage Test
-        continue-on-error: true
-        run: npm run coverage
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
 
-      - name: Run an analysis of the ${{ github.REF }} branch ${{ github.BASE_REF }} base
-        uses: sonarsource/sonarqube-scan-action@master
+      - name: Build and analyze
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
+        run: ./gradlew build sonarqube --info
