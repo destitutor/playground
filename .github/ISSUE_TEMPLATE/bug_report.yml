@@ -6,35 +6,41 @@ body:
   - type: textarea
     id: what-happened
     attributes:
-      label: ❗ 발생한 문제
+      label: 🐞 버그 설명
       description: "개발 도중에 발생한 문제를 구체적으로 설명해주세요. 어떤 상황에서 문제가 발생했나요?"
-      placeholder: "예: 데이터베이스 연결 실패, API 응답 시간 초과 등"
+      placeholder: "예: 로그인 페이지에서 사용자 인증 실패, 데이터 저장 시 500 에러 발생 등"
     validations:
       required: true
   - type: textarea
     id: expected-result
     attributes:
-      label: 🎯 기대한 결과
-      description: "문제 발생 전 기대한 결과를 설명해주세요."
-      placeholder: "예: 데이터베이스에 정상적으로 연결됨, API가 정상적으로 응답함 등"
+      label: 🎯 기대 결과
+      description: "문제가 발생하지 않았더라면 어떤 결과가 나왔을지 설명해주세요."
+      placeholder: "예: 사용자가 정상적으로 로그인됨, 데이터가 성공적으로 저장됨 등"
     validations:
       required: true
   - type: textarea
     id: logs
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      label: 📝 관련 로그
+      description: "관련 로그를 복사하여 붙여넣어 주세요. 로그는 자동으로 코드 형식으로 변환됩니다."
+      placeholder: "로그를 여기에 붙여넣어 주세요."
       render: shell
-  - type: textarea
-    id: repro
-    attributes:
-      label: Reproduction steps
-      description: "How do you trigger this bug? Please walk us through it step by step."
-      value: |
-        1.
-        2.
-        3.
-        ...
-      render: bash
     validations:
-      required: true
+      required: false
+  - type: textarea
+    id: environment-info
+    attributes:
+      label: 🖥️ 환경 정보
+      description: "문제가 발생한 환경에 대한 정보를 제공해주세요. 운영체제, 개발 도구, 브라우저, 브라우저 버전 등을 포함해주세요."
+      placeholder: "예: Windows 10, IntelliJ IDEA, Chrome 89, Node.js 14.16"
+    validations:
+      required: false
+  - type: textarea
+    id: additional-references
+    attributes:
+      label: 📚 참고 자료
+      description: "버그에 관해서 참고할 만한 자료나 링크가 있다면 제공해주세요."
+      placeholder: "참고할 자료나 링크를 입력해주세요."
+    validations:
+      required: false
