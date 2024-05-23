@@ -7,8 +7,8 @@ body:
     id: what-happened
     attributes:
       label: ❗ 발생한 문제
-      description: 개발 도중에 발생한 문제를 구체적으로 설명해주세요. 어떤 상황에서 문제가 발생했나요?
-      placeholder: 예: 데이터베이스 연결 실패, API 응답 시간 초과 등
+      description: "개발 도중에 발생한 문제를 구체적으로 설명해주세요. 어떤 상황에서 문제가 발생했나요?"
+      placeholder: "예: 데이터베이스 연결 실패, API 응답 시간 초과 등"
     validations:
       required: true
   - type: textarea
