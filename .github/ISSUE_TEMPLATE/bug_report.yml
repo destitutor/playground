@@ -15,6 +15,7 @@ body:
       render: bash
     validations:
       required: true
+
   - type: markdown
     id: expected-result
     attributes:
@@ -23,6 +24,7 @@ body:
       placeholder: "예: 사용자가 정상적으로 로그인됨, 데이터가 성공적으로 저장됨 등"
     validations:
       required: false
+
   - type: markdown
     id: actual-behavior
     attributes:
@@ -31,6 +33,7 @@ body:
       placeholder: "예: 로그인 페이지에서 사용자 인증 실패, 데이터 저장 시 500 에러 발생 등"
     validations:
       required: false
+
   - type: textarea
     id: logs
     attributes:
@@ -40,6 +43,7 @@ body:
       render: shell
     validations:
       required: false
+
   - type: markdown
     id: environment-info
     attributes:
@@ -48,6 +52,7 @@ body:
       placeholder: "예: Windows 10, IntelliJ IDEA, Chrome 89, Node.js 14.16"
     validations:
       required: false
+
   - type: markdown
     id: additional-references
     attributes:
