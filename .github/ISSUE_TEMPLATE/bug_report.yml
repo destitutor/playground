@@ -1,7 +1,7 @@
 name: 🐞 버그
 description: 개발 도중 버그가 발생했나요?
 title: "[BUG] "
-labels: ["bug"]
+labels: ["🐞 bug"]
 body:
   - type: textarea
     attributes:
