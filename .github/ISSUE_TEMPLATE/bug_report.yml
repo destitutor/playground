@@ -1,61 +1,40 @@
-name: Bug Report
-description: File a bug report.
-title: "[BUG]: "
+name: 🐞 버그
+description: 개발 도중 버그가 발생했나요?
+title: "[BUG] "
 labels: ["bug"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
   - type: textarea
     id: what-happened
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: ❗ 발생한 문제
+      description: 개발 도중에 발생한 문제를 구체적으로 설명해주세요. 어떤 상황에서 문제가 발생했나요?
+      placeholder: 예: 데이터베이스 연결 실패, API 응답 시간 초과 등
     validations:
       required: true
-  - type: dropdown
-    id: version
+  - type: textarea
+    id: expected-result
     attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-      default: 0
+      label: 🎯 기대한 결과
+      description: 문제 발생 전 기대한 결과를 설명해주세요.
+      placeholder: 예: 데이터베이스에 정상적으로 연결됨, API가 정상적으로 응답함 등
     validations:
       required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
   - type: textarea
     id: logs
     attributes:
       label: Relevant log output
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
       render: shell
-  - type: checkboxes
-    id: terms
+  - type: textarea
+    id: repro
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com). 
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+      label: Reproduction steps
+      description: "How do you trigger this bug? Please walk us through it step by step."
+      value: |
+        1.
+        2.
+        3.
+        ...
+      render: bash
+    validations:
+      required: true
