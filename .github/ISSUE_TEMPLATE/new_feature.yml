@@ -46,6 +46,6 @@ body:
     attributes:
       label: ⌛ 소요 시간
       description: "해당 기능을 구현하는데 실제로 소요된 시간을 입력해주세요."
-      placeholder: "예: 8시간"너묵
+      placeholder: "예: 8시간"
     validations:
       required: false
