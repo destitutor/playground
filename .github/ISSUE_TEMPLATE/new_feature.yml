@@ -21,8 +21,6 @@ body:
         - [ ] UserRepository.java에 사용자 인증 쿼리 추가
         - [ ] JWT 토큰 생성 및 검증 로직 추가
         - [ ] 로그인 요청 및 응답 DTO 작성
-      value: |
-        - [ ] 작업 A
     validations:
       required: true
 
