@@ -15,7 +15,7 @@ body:
     validations:
       required: true
 
-  - type: markdown
+  - type: textarea
     attributes:
       label: ✔️ 기대 결과
       description: "문제가 발생하지 않았더라면 어떤 결과가 나왔을지 설명해주세요."
@@ -23,7 +23,7 @@ body:
     validations:
       required: false
 
-  - type: markdown
+  - type: textarea
     attributes:
       label: ❌ 실제 동작
       description: "실제로 어떻게 동작했는지 설명해주세요. 발생한 문제를 구체적으로 기술해주세요."
@@ -40,7 +40,7 @@ body:
     validations:
       required: false
 
-  - type: markdown
+  - type: textarea
     attributes:
       label: 🖥️ 환경 정보
       description: "문제가 발생한 환경에 대한 정보를 제공해주세요. 운영체제, 개발 도구, 브라우저, 브라우저 버전 등을 포함해주세요."
@@ -48,7 +48,7 @@ body:
     validations:
       required: false
 
-  - type: markdown
+  - type: textarea
     attributes:
       label: 📚 참고 자료
       description: "버그에 관해서 참고할 만한 자료나 링크가 있다면 제공해주세요."
