@@ -4,7 +4,6 @@ title: "[BUG] "
 labels: ["bug"]
 body:
   - type: textarea
-    id: steps-to-reproduce
     attributes:
       label: 🔄 재현 방법
       description: "버그를 재현할 수 있는 방법을 단계별로 설명해주세요. 가능한 한 상세히 작성해주세요."
@@ -17,7 +16,6 @@ body:
       required: true
 
   - type: markdown
-    id: expected-result
     attributes:
       label: ✔️ 기대 결과
       description: "문제가 발생하지 않았더라면 어떤 결과가 나왔을지 설명해주세요."
@@ -26,7 +24,6 @@ body:
       required: false
 
   - type: markdown
-    id: actual-behavior
     attributes:
       label: ❌ 실제 동작
       description: "실제로 어떻게 동작했는지 설명해주세요. 발생한 문제를 구체적으로 기술해주세요."
@@ -35,7 +32,6 @@ body:
       required: false
 
   - type: textarea
-    id: logs
     attributes:
       label: 📝 관련 로그
       description: "관련 로그를 복사하여 붙여넣어 주세요. 로그는 자동으로 코드 형식으로 변환됩니다."
@@ -45,7 +41,6 @@ body:
       required: false
 
   - type: markdown
-    id: environment-info
     attributes:
       label: 🖥️ 환경 정보
       description: "문제가 발생한 환경에 대한 정보를 제공해주세요. 운영체제, 개발 도구, 브라우저, 브라우저 버전 등을 포함해주세요."
@@ -54,7 +49,6 @@ body:
       required: false
 
   - type: markdown
-    id: additional-references
     attributes:
       label: 📚 참고 자료
       description: "버그에 관해서 참고할 만한 자료나 링크가 있다면 제공해주세요."
