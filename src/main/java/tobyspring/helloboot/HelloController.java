@@ -15,7 +15,7 @@ public class HelloController {
     private final HelloService helloService;
 
     public HelloController(HelloService helloService) {
-        this.helloService = helloService;
+        this.helloService = helloService; // 주석을 달아보겠습니다
     }
 
     @GetMapping("/hello")
